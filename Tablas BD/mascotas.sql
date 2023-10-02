@@ -2,8 +2,8 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Servidor: localhost
--- Tiempo de generación: 02-10-2023 a las 17:01:53
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 02-10-2023 a las 20:17:25
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `clinicaVete`
+-- Base de datos: `clinicavete`
 --
 
 -- --------------------------------------------------------
@@ -36,7 +36,6 @@ CREATE TABLE `mascotas` (
   `colorDePelo` varchar(50) NOT NULL,
   `fechaNac` date NOT NULL,
   `pesoM` double NOT NULL,
-  `pesoA` double NOT NULL,
   `idCliente` int(11) NOT NULL,
   `estado` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
