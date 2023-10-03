@@ -2,8 +2,8 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Servidor: localhost
--- Tiempo de generación: 02-10-2023 a las 17:02:38
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 02-10-2023 a las 20:17:42
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `clinicaVete`
+-- Base de datos: `clinicavete`
 --
 
 -- --------------------------------------------------------
@@ -30,9 +30,10 @@ SET time_zone = "+00:00";
 CREATE TABLE `visitas` (
   `idVisita` int(11) NOT NULL,
   `idMascota` int(11) NOT NULL,
-  `idCliente` int(11) NOT NULL,
   `idTratamiento` int(11) NOT NULL,
-  `fechaV` date NOT NULL
+  `fechaV` date NOT NULL,
+  `detallesSintomas` varchar(50) NOT NULL,
+  `pesoActual` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -44,7 +45,6 @@ CREATE TABLE `visitas` (
 --
 ALTER TABLE `visitas`
   ADD PRIMARY KEY (`idVisita`),
-  ADD KEY `idCliente` (`idCliente`),
   ADD KEY `idMascota` (`idMascota`),
   ADD KEY `idTratamiento` (`idTratamiento`);
 
@@ -66,7 +66,6 @@ ALTER TABLE `visitas`
 -- Filtros para la tabla `visitas`
 --
 ALTER TABLE `visitas`
-  ADD CONSTRAINT `visitas_ibfk_1` FOREIGN KEY (`idCliente`) REFERENCES `clientes` (`idCliente`),
   ADD CONSTRAINT `visitas_ibfk_2` FOREIGN KEY (`idMascota`) REFERENCES `mascotas` (`idmascota`),
   ADD CONSTRAINT `visitas_ibfk_3` FOREIGN KEY (`idTratamiento`) REFERENCES `tratamientos` (`idTratamiento`);
 COMMIT;
