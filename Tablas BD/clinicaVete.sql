@@ -2,8 +2,8 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 03-10-2023 a las 14:31:21
+-- Servidor: localhost
+-- Tiempo de generación: 03-10-2023 a las 15:41:07
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `clinicavete`
+-- Base de datos: `clinicaVete`
 --
 
 -- --------------------------------------------------------
@@ -36,7 +36,8 @@ CREATE TABLE `clientes` (
   `telefono` varchar(50) NOT NULL,
   `contactoN` varchar(100) NOT NULL,
   `contactoTel` varchar(50) NOT NULL,
-  `estado` tinyint(1) NOT NULL
+  `estado` tinyint(1) NOT NULL,
+  `correoElectronico` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -162,7 +163,7 @@ ALTER TABLE `mascotas`
 -- Filtros para la tabla `visitas`
 --
 ALTER TABLE `visitas`
-  ADD CONSTRAINT `visitas_ibfk_2` FOREIGN KEY (`idMascota`) REFERENCES `mascotas` (`idmascota`),
+  ADD CONSTRAINT `visitas_ibfk_2` FOREIGN KEY (`idMascota`) REFERENCES `mascotas` (`idMascota`),
   ADD CONSTRAINT `visitas_ibfk_3` FOREIGN KEY (`idTratamiento`) REFERENCES `tratamientos` (`idTratamiento`);
 COMMIT;
 
