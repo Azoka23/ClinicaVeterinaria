@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 02-10-2023 a las 20:17:25
+-- Tiempo de generación: 03-10-2023 a las 14:30:45
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `mascotas` (
-  `idmascota` int(11) NOT NULL,
+  `idMascota` int(11) NOT NULL,
   `alias` varchar(50) NOT NULL,
   `sexo` varchar(50) NOT NULL,
   `especie` varchar(100) NOT NULL,
@@ -36,6 +36,7 @@ CREATE TABLE `mascotas` (
   `colorDePelo` varchar(50) NOT NULL,
   `fechaNac` date NOT NULL,
   `pesoM` double NOT NULL,
+  `pesoA` double NOT NULL,
   `idCliente` int(11) NOT NULL,
   `estado` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -48,7 +49,7 @@ CREATE TABLE `mascotas` (
 -- Indices de la tabla `mascotas`
 --
 ALTER TABLE `mascotas`
-  ADD PRIMARY KEY (`idmascota`),
+  ADD PRIMARY KEY (`idMascota`),
   ADD KEY `idCliente` (`idCliente`);
 
 --
@@ -59,7 +60,7 @@ ALTER TABLE `mascotas`
 -- AUTO_INCREMENT de la tabla `mascotas`
 --
 ALTER TABLE `mascotas`
-  MODIFY `idmascota` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idMascota` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Restricciones para tablas volcadas
