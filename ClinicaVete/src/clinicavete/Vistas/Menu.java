@@ -13,7 +13,7 @@ public class Menu extends javax.swing.JFrame {
     public Menu() {
 
         initComponents();
-        backgroundLabel = new javax.swing.JLabel(new javax.swing.ImageIcon("/Users/marcelaaliciaarroyo/Desktop/JAVA/Curso Java ULP/NetBeansProjects/ClinicaVeterinaria/Imagenes/veterinary_icon_180438.png"));
+        //backgroundLabel = new javax.swing.JLabel(new javax.swing.ImageIcon("/Users/marcelaaliciaarroyo/Desktop/JAVA/Curso Java ULP/NetBeansProjects/ClinicaVeterinaria/Imagenes/veterinary_icon_180438.png"));
 //        
 
         // Configura otras propiedades del JFrame
@@ -39,8 +39,7 @@ public class Menu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        backgroundLabel = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        jEscritorio = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
         jBarClientes = new javax.swing.JMenu();
         jMIBuscar = new javax.swing.JMenuItem();
@@ -58,17 +57,15 @@ public class Menu extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("PET DOCTOR");
+        setPreferredSize(new java.awt.Dimension(800, 700));
 
-        backgroundLabel.setIcon(new javax.swing.ImageIcon("/Users/marcelaaliciaarroyo/Desktop/JAVA/Curso Java ULP/NetBeansProjects/ClinicaVeterinaria/Imagenes/veterinary_icon_180438.png")); // NOI18N
+        jEscritorio.setPreferredSize(new java.awt.Dimension(700, 600));
 
-        jLabel1.setFont(new java.awt.Font("Academy Engraved LET", 0, 18)); // NOI18N
-        jLabel1.setText("   PET DOCTOR");
-
-        jBarClientes.setIcon(new javax.swing.ImageIcon("/Users/marcelaaliciaarroyo/Desktop/JAVA/Curso Java ULP/NetBeansProjects/ClinicaVeterinaria/Imagenes/people_114360.png")); // NOI18N
+        jBarClientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/clinicavete/Imagenes/people_114360.png"))); // NOI18N
         jBarClientes.setText("Clientes");
 
         jMIBuscar.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.SHIFT_MASK));
-        jMIBuscar.setIcon(new javax.swing.ImageIcon("/Users/marcelaaliciaarroyo/Desktop/JAVA/Curso Java ULP/NetBeansProjects/ClinicaVeterinaria/Imagenes/free-30-instagram-stories-icons21_122568.png")); // NOI18N
+        jMIBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/clinicavete/Imagenes/free-30-instagram-stories-icons21_122568.png"))); // NOI18N
         jMIBuscar.setText("Buscar");
         jMIBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -78,7 +75,7 @@ public class Menu extends javax.swing.JFrame {
         jBarClientes.add(jMIBuscar);
 
         jMINuevo.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_B, java.awt.event.InputEvent.SHIFT_MASK));
-        jMINuevo.setIcon(new javax.swing.ImageIcon("/Users/marcelaaliciaarroyo/Desktop/JAVA/Curso Java ULP/NetBeansProjects/ClinicaVeterinaria/Imagenes/free-30-instagram-stories-icons51_122598.png")); // NOI18N
+        jMINuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/clinicavete/Imagenes/free-30-instagram-stories-icons51_122598.png"))); // NOI18N
         jMINuevo.setText("Nuevo");
         jMINuevo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -89,16 +86,16 @@ public class Menu extends javax.swing.JFrame {
 
         jMenuBar1.add(jBarClientes);
 
-        jBarMascotas.setIcon(new javax.swing.ImageIcon("/Users/marcelaaliciaarroyo/Desktop/JAVA/Curso Java ULP/NetBeansProjects/ClinicaVeterinaria/Imagenes/labrador_dog_animal_15967.png")); // NOI18N
+        jBarMascotas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/clinicavete/Imagenes/labrador_dog_animal_15967.png"))); // NOI18N
         jBarMascotas.setText("Mascotas");
 
         jMIBuscarMascotas.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.CTRL_MASK));
-        jMIBuscarMascotas.setIcon(new javax.swing.ImageIcon("/Users/marcelaaliciaarroyo/Desktop/JAVA/Curso Java ULP/NetBeansProjects/ClinicaVeterinaria/Imagenes/free-30-instagram-stories-icons23_122570.png")); // NOI18N
+        jMIBuscarMascotas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/clinicavete/Imagenes/free-30-instagram-stories-icons23_122570.png"))); // NOI18N
         jMIBuscarMascotas.setText("Buscar");
         jBarMascotas.add(jMIBuscarMascotas);
 
         jMINuevaMasc.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_B, java.awt.event.InputEvent.CTRL_MASK));
-        jMINuevaMasc.setIcon(new javax.swing.ImageIcon("/Users/marcelaaliciaarroyo/Desktop/JAVA/Curso Java ULP/NetBeansProjects/ClinicaVeterinaria/Imagenes/free-30-instagram-stories-icons53_122600.png")); // NOI18N
+        jMINuevaMasc.setIcon(new javax.swing.ImageIcon(getClass().getResource("/clinicavete/Imagenes/free-30-instagram-stories-icons53_122600.png"))); // NOI18N
         jMINuevaMasc.setText("Nueva");
         jMINuevaMasc.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -109,16 +106,16 @@ public class Menu extends javax.swing.JFrame {
 
         jMenuBar1.add(jBarMascotas);
 
-        jMbarAdm.setIcon(new javax.swing.ImageIcon("/Users/marcelaaliciaarroyo/Desktop/JAVA/Curso Java ULP/NetBeansProjects/ClinicaVeterinaria/Imagenes/pet_folder_file_document_page_icon_124627.png")); // NOI18N
+        jMbarAdm.setIcon(new javax.swing.ImageIcon(getClass().getResource("/clinicavete/Imagenes/pet_folder_file_document_page_icon_124627.png"))); // NOI18N
         jMbarAdm.setText("Administracion");
 
         jMIVisitas.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.CTRL_MASK));
-        jMIVisitas.setIcon(new javax.swing.ImageIcon("/Users/marcelaaliciaarroyo/Desktop/JAVA/Curso Java ULP/NetBeansProjects/ClinicaVeterinaria/Imagenes/checklist_medical_healthcare_pen_clipboard_clipchart_icon_142002.png")); // NOI18N
+        jMIVisitas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/clinicavete/Imagenes/checklist_medical_healthcare_pen_clipboard_clipchart_icon_142002.png"))); // NOI18N
         jMIVisitas.setText("Visitas");
         jMbarAdm.add(jMIVisitas);
 
         jMITratam.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.CTRL_MASK));
-        jMITratam.setIcon(new javax.swing.ImageIcon("/Users/marcelaaliciaarroyo/Desktop/JAVA/Curso Java ULP/NetBeansProjects/ClinicaVeterinaria/Imagenes/medical-12_icon-icons.com_73944.png")); // NOI18N
+        jMITratam.setIcon(new javax.swing.ImageIcon(getClass().getResource("/clinicavete/Imagenes/medical-12_icon-icons.com_73944.png"))); // NOI18N
         jMITratam.setText("Tratamiento");
         jMITratam.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -128,7 +125,7 @@ public class Menu extends javax.swing.JFrame {
         jMbarAdm.add(jMITratam);
 
         jMIOtros.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.CTRL_MASK));
-        jMIOtros.setIcon(new javax.swing.ImageIcon("/Users/marcelaaliciaarroyo/Desktop/JAVA/Curso Java ULP/NetBeansProjects/ClinicaVeterinaria/Imagenes/household_chores_feeding_pet_feed_dog_food_icon_133347.png")); // NOI18N
+        jMIOtros.setIcon(new javax.swing.ImageIcon(getClass().getResource("/clinicavete/Imagenes/household_chores_feeding_pet_feed_dog_food_icon_133347.png"))); // NOI18N
         jMIOtros.setText("Otros");
         jMIOtros.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -139,11 +136,11 @@ public class Menu extends javax.swing.JFrame {
 
         jMenuBar1.add(jMbarAdm);
 
-        jMBarFacturacion.setIcon(new javax.swing.ImageIcon("/Users/marcelaaliciaarroyo/Desktop/JAVA/Curso Java ULP/NetBeansProjects/ClinicaVeterinaria/Imagenes/budget256_24775.png")); // NOI18N
+        jMBarFacturacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/clinicavete/Imagenes/budget256_24775.png"))); // NOI18N
         jMBarFacturacion.setText("Facturacion");
 
         jMICosto.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.CTRL_MASK));
-        jMICosto.setIcon(new javax.swing.ImageIcon("/Users/marcelaaliciaarroyo/Desktop/JAVA/Curso Java ULP/NetBeansProjects/ClinicaVeterinaria/Imagenes/pet_rat_mouse_11098.png")); // NOI18N
+        jMICosto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/clinicavete/Imagenes/pet_rat_mouse_11098.png"))); // NOI18N
         jMICosto.setText("Costo visita");
         jMBarFacturacion.add(jMICosto);
 
@@ -159,23 +156,11 @@ public class Menu extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(180, 180, 180)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(21, 21, 21)
-                        .addComponent(backgroundLabel)))
-                .addContainerGap(29, Short.MAX_VALUE))
+            .addComponent(jEscritorio, javax.swing.GroupLayout.DEFAULT_SIZE, 599, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(backgroundLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 458, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jEscritorio, javax.swing.GroupLayout.DEFAULT_SIZE, 505, Short.MAX_VALUE)
         );
 
         pack();
@@ -198,21 +183,21 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_jMIOtrosActionPerformed
 
     private void jMINuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMINuevoActionPerformed
-       backgroundLabel.removeAll();
-        backgroundLabel.repaint();
+       jEscritorio.removeAll();
+        jEscritorio.repaint();
         //jEscritorio.add(jLULP);
         FormularioCliente cargarCliente = new FormularioCliente();
 
         // Configurar el tamaño del JInternalFrame
-        cargarCliente.setSize(400, 300);
+        cargarCliente.setSize(600, 500);
 
         // Calcular el centro del JDesktopPane
-        int x = (backgroundLabel.getWidth() - cargarCliente.getWidth()) / 2;
-        int y = (backgroundLabel.getHeight() - cargarCliente.getHeight()) / 2;
+        int x = (jEscritorio.getWidth() - cargarCliente.getWidth()) / 2;
+        int y = (jEscritorio.getHeight() - cargarCliente.getHeight()) / 2;
 
         // Establecer la ubicación y agregar el JInternalFrame
         cargarCliente.setBounds(x, y, cargarCliente.getWidth(), cargarCliente.getHeight());
-        backgroundLabel.add(cargarCliente);
+        jEscritorio.add(cargarCliente);
         cargarCliente.setVisible(true);
     }//GEN-LAST:event_jMINuevoActionPerformed
 
@@ -252,10 +237,9 @@ public class Menu extends javax.swing.JFrame {
     //}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel backgroundLabel;
     private javax.swing.JMenu jBarClientes;
     private javax.swing.JMenu jBarMascotas;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JDesktopPane jEscritorio;
     private javax.swing.JMenu jMBarFacturacion;
     private javax.swing.JMenu jMBarSalir;
     private javax.swing.JMenuItem jMIBuscar;

@@ -30,7 +30,6 @@ public class IngresoAlSistema extends javax.swing.JFrame {
         jTUsuario = new javax.swing.JTextField();
         jBIngresar = new javax.swing.JButton();
         jTPassword = new javax.swing.JPasswordField();
-        jLmostrar = new javax.swing.JLabel();
         jLMostrar = new javax.swing.JLabel();
         jlBienvenida = new javax.swing.JLabel();
 
@@ -60,14 +59,7 @@ public class IngresoAlSistema extends javax.swing.JFrame {
             }
         });
 
-        jLmostrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo65universidad/Vistas/Imagenes/Office_-34_icon-icons.com_73983.png"))); // NOI18N
-        jLmostrar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLmostrarMouseClicked(evt);
-            }
-        });
-
-        jLMostrar.setIcon(new javax.swing.ImageIcon("/Users/marcelaaliciaarroyo/Desktop/JAVA/Curso Java ULP/NetBeansProjects/ClinicaVeterinaria/Imagenes/vision_view_eye_icon_153887.png")); // NOI18N
+        jLMostrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/clinicavete/Imagenes/vision_view_eye_icon_153887.png"))); // NOI18N
         jLMostrar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLMostrarMouseClicked(evt);
@@ -90,13 +82,8 @@ public class IngresoAlSistema extends javax.swing.JFrame {
                         .addGroup(jpLoggingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jTUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 139, Short.MAX_VALUE)
                             .addComponent(jTPassword))
-                        .addGroup(jpLoggingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jpLoggingLayout.createSequentialGroup()
-                                .addGap(29, 29, 29)
-                                .addComponent(jLmostrar))
-                            .addGroup(jpLoggingLayout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(jLMostrar))))))
+                        .addGap(18, 18, 18)
+                        .addComponent(jLMostrar))))
         );
         jpLoggingLayout.setVerticalGroup(
             jpLoggingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -105,9 +92,7 @@ public class IngresoAlSistema extends javax.swing.JFrame {
                 .addGroup(jpLoggingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jlUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLmostrar)
-                .addGap(11, 11, 11)
+                .addGap(17, 17, 17)
                 .addGroup(jpLoggingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLMostrar, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jpLoggingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -120,7 +105,7 @@ public class IngresoAlSistema extends javax.swing.JFrame {
 
         jlBienvenida.setBackground(new java.awt.Color(204, 204, 204));
         jlBienvenida.setFont(new java.awt.Font("Academy Engraved LET", 1, 36)); // NOI18N
-        jlBienvenida.setIcon(new javax.swing.ImageIcon("/Users/marcelaaliciaarroyo/Desktop/JAVA/Curso Java ULP/NetBeansProjects/ClinicaVeterinaria/Imagenes/green_pets_icon-icons.com_59415 (1).png")); // NOI18N
+        jlBienvenida.setIcon(new javax.swing.ImageIcon(getClass().getResource("/clinicavete/Imagenes/green_pets_icon-icons.com_59415 (1).png"))); // NOI18N
         jlBienvenida.setText("    PET DOCTOR");
         jlBienvenida.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
@@ -152,23 +137,6 @@ public class IngresoAlSistema extends javax.swing.JFrame {
         ingresar();
 
     }//GEN-LAST:event_jBIngresarActionPerformed
-
-    private void jLmostrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLmostrarMouseClicked
-//        //jTPassword.setEchoChar((char) 0);
-//
-//        if (passwordVisible) {
-//            // Si la contraseña está visible, ocúltala
-//            jTPassword.setEchoChar('*'); // O establece cualquier otro carácter que desees para ocultar la contraseña
-//        } else {
-//            // Si la contraseña está oculta, muéstrala
-//            jTPassword.setEchoChar((char) 0);
-//        }
-//
-//        // Invierte el estado
-//        passwordVisible = !passwordVisible;
-
-
-    }//GEN-LAST:event_jLmostrarMouseClicked
 
     private void jLMostrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLMostrarMouseClicked
         //jTPassword.setEchoChar((char) 0);
@@ -287,7 +255,6 @@ public class IngresoAlSistema extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBIngresar;
     private javax.swing.JLabel jLMostrar;
-    private javax.swing.JLabel jLmostrar;
     private javax.swing.JPasswordField jTPassword;
     private javax.swing.JTextField jTUsuario;
     private javax.swing.JTabbedPane jTabbedPane1;

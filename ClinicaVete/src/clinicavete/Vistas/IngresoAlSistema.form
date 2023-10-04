@@ -74,16 +74,8 @@
                               <Component id="jTUsuario" pref="139" max="32767" attributes="0"/>
                               <Component id="jTPassword" max="32767" attributes="0"/>
                           </Group>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
-                                  <Component id="jLmostrar" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="jLMostrar" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="jLMostrar" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -97,9 +89,7 @@
                       <Component id="jlUsuario" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
                       <Component id="jTUsuario" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jLmostrar" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jLMostrar" min="-2" pref="31" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -149,20 +139,10 @@
         </Component>
         <Component class="javax.swing.JPasswordField" name="jTPassword">
         </Component>
-        <Component class="javax.swing.JLabel" name="jLmostrar">
-          <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/grupo65universidad/Vistas/Imagenes/Office_-34_icon-icons.com_73983.png"/>
-            </Property>
-          </Properties>
-          <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLmostrarMouseClicked"/>
-          </Events>
-        </Component>
         <Component class="javax.swing.JLabel" name="jLMostrar">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="/Users/marcelaaliciaarroyo/Desktop/JAVA/Curso Java ULP/NetBeansProjects/ClinicaVeterinaria/Imagenes/vision_view_eye_icon_153887.png"/>
+              <Image iconType="3" name="/clinicavete/Imagenes/vision_view_eye_icon_153887.png"/>
             </Property>
           </Properties>
           <Events>
@@ -180,7 +160,7 @@
           <Font name="Academy Engraved LET" size="36" style="1"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="/Users/marcelaaliciaarroyo/Desktop/JAVA/Curso Java ULP/NetBeansProjects/ClinicaVeterinaria/Imagenes/green_pets_icon-icons.com_59415 (1).png"/>
+          <Image iconType="3" name="/clinicavete/Imagenes/green_pets_icon-icons.com_59415 (1).png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="    PET DOCTOR"/>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
