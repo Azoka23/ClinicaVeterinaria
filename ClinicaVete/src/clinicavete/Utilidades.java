@@ -34,18 +34,18 @@ public class Utilidades {
         JOptionPane.showMessageDialog(internalFrame, "Error: " + ex.getMessage());
     }
 
-    public static void validar(Object objet) throws Exception {
-
-        if (!(objet instanceof Cliente)) {
-            throw new Exception("Debes indicar un Cliente");
-        } else if (!(objet instanceof Mascota)) {
-            throw new Exception("Debes indicar una Mascota");
-        } else if (!(objet instanceof Tratamiento)) {
-            throw new Exception("Debes indicar un Tratamiento");
-        } else if (!(objet instanceof Visita)) {
-            throw new Exception("Debes indicar una Visita");
-        }
-    }
+//    public static void validar(Object objet) throws Exception {
+//
+//        if (!(objet instanceof Cliente)) {
+//            throw new Exception("Debes indicar un Cliente");
+//        } else if (!(objet instanceof Mascota)) {
+//            throw new Exception("Debes indicar una Mascota");
+//        } else if (!(objet instanceof Tratamiento)) {
+//            throw new Exception("Debes indicar un Tratamiento");
+//        } else if (!(objet instanceof Visita)) {
+//            throw new Exception("Debes indicar una Visita");
+//        }
+//    }
     
     
 }

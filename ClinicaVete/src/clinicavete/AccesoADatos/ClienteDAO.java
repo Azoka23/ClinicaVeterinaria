@@ -1,12 +1,15 @@
 package clinicavete.AccesoADatos;
 
 import clinicavete.Entidades.Cliente;
+import clinicavete.Entidades.Mascota;
 import clinicavete.Utilidades;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
+import javax.swing.JOptionPane;
 
 public class ClienteDAO extends DAO {
 
@@ -16,8 +19,9 @@ public class ClienteDAO extends DAO {
 
     public void guardarCliente(Cliente cliente) throws ClassNotFoundException, SQLException, Exception {
 
-        Utilidades.validar(cliente);
-        String sql = "INSERT INTO clientes (dni, apellido, nombre, direccion, telefono, contactoN,contactoT,estado,correoElectronico) VALUES (?, ?, ?, ?, ?, ?,?,?,?)";
+        //Utilidades.validar(cliente);
+        validarCliente(cliente);
+        String sql = "INSERT INTO clientes (dni, apellido, nombre, direccion, telefono, contactoN,contactoTel,estado,correoElectronico) VALUES (?, ?, ?, ?, ?, ?,?,?,?)";
         try (PreparedStatement preparedStatement = conexion.prepareStatement(sql)) {
             preparedStatement.setInt(1, cliente.getDni());
             preparedStatement.setString(2, cliente.getApellido());
@@ -35,9 +39,9 @@ public class ClienteDAO extends DAO {
     }
 
     public void modificarCliente(Cliente cliente) throws Exception {
-        Utilidades.validar(cliente);
-
-        String sql = "UPDATE clientes SET apellido=?, nombre=?, direccion=?, telefono=?, contactoN=?,contactoT=?, correoElectronico=? WHERE dni=?";
+        // Utilidades.validar(cliente);
+        validarCliente(cliente);
+        String sql = "UPDATE clientes SET apellido=?, nombre=?, direccion=?, telefono=?, contactoN=?,contactoTel=?,estado=?, correoElectronico=? WHERE dni=?";
 
         try (PreparedStatement preparedStatement = conexion.prepareStatement(sql)) {
             preparedStatement.setString(1, cliente.getApellido());
@@ -75,14 +79,17 @@ public class ClienteDAO extends DAO {
     }
 
     public Cliente buscarListaClientexDni(int dni) throws Exception {
-        String sql = "SELECT * FROM `cliente` WHERE dni=?";
+        String sql = "SELECT * FROM clientes WHERE dni=?";
 
         try (PreparedStatement preparedStatement = conexion.prepareStatement(sql)) {
             preparedStatement.setInt(1, dni);
+
             resultado = consultarBase(preparedStatement);
+
             Cliente cliente = null;
 
             if (resultado.next()) {
+
                 cliente = obtenerClienteDesdeResultado(resultado);
             }
 
@@ -95,6 +102,7 @@ public class ClienteDAO extends DAO {
         String sql = "SELECT * FROM `clientes` WHERE idCliente=?";
         try (PreparedStatement preparedStatement = conexion.prepareStatement(sql)) {
             preparedStatement.setInt(1, idCliente);
+
             resultado = consultarBase(preparedStatement);
             Cliente cliente = null;
             if (resultado.next()) {
@@ -120,8 +128,30 @@ public class ClienteDAO extends DAO {
         return clientes;
     }
 
+//    public Collection<Mascota> obtenerMascotasxIdCliente(int idCliente) throws Exception {
+//
+//        //MascotaDAO mascotaD = new MascotaDAO();
+////        String sql = "SELECT DISTINCT m.idMateria, m.nombre "
+////                + "FROM materias m "
+////                + "JOIN inscripciones i ON m.idMateria = i.idMateria "
+////                + "WHERE i.idAlumno = ? ";
+//        String sql = "SELECT * FROM `mascotas` WHERE idCliente=?";
+//        try (PreparedStatement preparedStatement = conexion.prepareStatement(sql)) {
+//            preparedStatement.setInt(1, idCliente);
+//            resultado = consultarBase(preparedStatement);
+//
+//            Collection<Mascota> mascota = new ArrayList();
+//            while (resultado.next()) {
+//                int idMateria = resultado.getInt("idMascota");
+//                mascota.add(mascotaD.obtenerMascotaPorId(idMateria));
+//            }
+//            return mascota;
+//        }
+//    }
+
     private Cliente obtenerClienteDesdeResultado(ResultSet result) throws SQLException {
         Cliente cliente = new Cliente();
+
         cliente.setIdCliente(result.getInt("idCliente"));
         cliente.setDni(result.getInt("dni"));
         cliente.setApellido(result.getString("apellido"));
@@ -129,10 +159,17 @@ public class ClienteDAO extends DAO {
         cliente.setDireccion(result.getString("direccion"));
         cliente.setTelefono(result.getString("telefono"));
         cliente.setContactoNombre(result.getString("contactoN"));
-        cliente.setContactoTelefono(result.getString("contactoT"));
+        cliente.setContactoTelefono(result.getString("contactoTel"));
+        cliente.setEstado(result.getBoolean("estado"));
         cliente.setEmail(result.getString("correoElectronico"));
 
         return cliente;
+    }
+
+    private void validarCliente(Cliente cliente) throws Exception {
+        if (cliente == null) {
+            throw new Exception("Debe indicar un Cliente");
+        }
     }
 
 }

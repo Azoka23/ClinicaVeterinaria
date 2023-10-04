@@ -20,8 +20,8 @@ public class MascotaDAO extends DAO {
     }
 
     public void guardarMascota(Mascota mascota) throws Exception {
-        Utilidades.validar(mascota);
-
+        //Utilidades.validar(mascota);
+        validarMascota(mascota);
         String sql = "INSERT INTO mascotas (alias, sexo, especie, raza, colorDePelo, fechaNac, pesoM,pesoA,idCliente, estado) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         try (PreparedStatement preparedStatement = conexion.prepareStatement(sql)) {
@@ -48,8 +48,8 @@ public class MascotaDAO extends DAO {
     }
 
     public void modificarMascota(Mascota mascota) throws Exception {
-        Utilidades.validar(mascota);
-
+        // Utilidades.validar(mascota);
+        validarMascota(mascota);
         String sql = "UPDATE mascotas SET alias=?, sexo=?, especie=?, raza=?, colorDePelo=?, fechaNac=?, pesoM=?,idCliente=?, estado=? WHERE idMascota=?";
 
         try (PreparedStatement preparedStatement = conexion.prepareStatement(sql)) {
@@ -182,6 +182,24 @@ public class MascotaDAO extends DAO {
         }
     }
 
+    public Collection<Mascota> listarMascotasxIdCliente(int idCliente) throws Exception {
+        String sql = "SELECT * FROM `mascotas` WHERE idCliente=?";
+
+        try (PreparedStatement preparedStatement = conexion.prepareStatement(sql)) {
+            preparedStatement.setInt(1, idCliente);
+            resultado = consultarBase(preparedStatement);
+
+            Collection<Mascota> mascotas = new ArrayList();
+
+            while (resultado.next()) {
+                mascotas.add(obtenerMascotaDesdeResultado(resultado));
+            }
+
+            return mascotas;
+
+        }
+    }
+
     private Mascota obtenerMascotaDesdeResultado(ResultSet result) throws SQLException, ClassNotFoundException, Exception {
         // Crear una instancia de ClienteDAO
         ClienteDAO clienteDAO = new ClienteDAO();
@@ -201,5 +219,11 @@ public class MascotaDAO extends DAO {
         mascota.setIdCliente(clienteDAO.obtenerClientexId(result.getInt("idCliente")));
 
         return mascota;
+    }
+
+    private void validarMascota(Mascota mascota) throws Exception {
+        if (mascota == null) {
+            throw new Exception("Debe indicar un Cliente");
+        }
     }
 }

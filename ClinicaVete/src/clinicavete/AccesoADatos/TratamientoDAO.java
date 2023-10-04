@@ -1,9 +1,10 @@
 package clinicavete.AccesoADatos;
 
-import clinicavete.Entidades.Tratamiento;
+
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import clinicavete.Entidades.Cliente;
+import clinicavete.Entidades.Tratamiento;
 import clinicavete.Utilidades;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
