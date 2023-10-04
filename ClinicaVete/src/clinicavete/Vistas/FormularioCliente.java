@@ -1,8 +1,6 @@
 package clinicavete.Vistas;
 
 import java.sql.SQLException;
-import java.time.LocalDate;
-import java.time.ZoneId;
 import javax.swing.JOptionPane;
 import clinicavete.AccesoADatos.ClienteDAO;
 import clinicavete.AccesoADatos.MascotaDAO;
