@@ -1,6 +1,5 @@
 package clinicavete.Vistas;
 
-import clinicavete.Entidades.Cliente;
 import javax.swing.JOptionPane;
 
 public class IngresoAlSistema extends javax.swing.JFrame {
@@ -32,12 +31,14 @@ public class IngresoAlSistema extends javax.swing.JFrame {
         jBIngresar = new javax.swing.JButton();
         jTPassword = new javax.swing.JPasswordField();
         jLmostrar = new javax.swing.JLabel();
+        jLMostrar = new javax.swing.JLabel();
         jlBienvenida = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Universidad");
 
-        jpLogging.setBackground(new java.awt.Color(0, 102, 153));
+        jpLogging.setBackground(new java.awt.Color(0, 153, 153));
+        jpLogging.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         jlUsuario.setFont(new java.awt.Font(".AppleSystemUIFont", 0, 18)); // NOI18N
         jlUsuario.setText("    Usuario");
@@ -66,13 +67,20 @@ public class IngresoAlSistema extends javax.swing.JFrame {
             }
         });
 
+        jLMostrar.setIcon(new javax.swing.ImageIcon("/Users/marcelaaliciaarroyo/Desktop/JAVA/Curso Java ULP/NetBeansProjects/ClinicaVeterinaria/Imagenes/vision_view_eye_icon_153887.png")); // NOI18N
+        jLMostrar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLMostrarMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jpLoggingLayout = new javax.swing.GroupLayout(jpLogging);
         jpLogging.setLayout(jpLoggingLayout);
         jpLoggingLayout.setHorizontalGroup(
             jpLoggingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpLoggingLayout.createSequentialGroup()
                 .addGap(51, 51, 51)
-                .addGroup(jpLoggingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(jpLoggingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jBIngresar)
                     .addGroup(jpLoggingLayout.createSequentialGroup()
                         .addGroup(jpLoggingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -82,9 +90,13 @@ public class IngresoAlSistema extends javax.swing.JFrame {
                         .addGroup(jpLoggingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jTUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 139, Short.MAX_VALUE)
                             .addComponent(jTPassword))
-                        .addGap(29, 29, 29)
-                        .addComponent(jLmostrar)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(jpLoggingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jpLoggingLayout.createSequentialGroup()
+                                .addGap(29, 29, 29)
+                                .addComponent(jLmostrar))
+                            .addGroup(jpLoggingLayout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(jLMostrar))))))
         );
         jpLoggingLayout.setVerticalGroup(
             jpLoggingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -93,33 +105,31 @@ public class IngresoAlSistema extends javax.swing.JFrame {
                 .addGroup(jpLoggingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jlUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLmostrar)
+                .addGap(11, 11, 11)
                 .addGroup(jpLoggingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jpLoggingLayout.createSequentialGroup()
-                        .addGap(17, 17, 17)
-                        .addComponent(jlPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jpLoggingLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jpLoggingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLmostrar))))
+                    .addComponent(jLMostrar, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jpLoggingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jlPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(24, 24, 24)
                 .addComponent(jBIngresar)
-                .addContainerGap(68, Short.MAX_VALUE))
+                .addContainerGap(64, Short.MAX_VALUE))
         );
 
-        jlBienvenida.setBackground(new java.awt.Color(0, 75, 102));
-        jlBienvenida.setFont(new java.awt.Font("Academy Engraved LET", 1, 18)); // NOI18N
-        jlBienvenida.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo65universidad/Vistas/Imagenes/32officeicons-31_89708.png"))); // NOI18N
-        jlBienvenida.setText("      BIENVENIDO AL SISTEMA");
+        jlBienvenida.setBackground(new java.awt.Color(204, 204, 204));
+        jlBienvenida.setFont(new java.awt.Font("Academy Engraved LET", 1, 36)); // NOI18N
+        jlBienvenida.setIcon(new javax.swing.ImageIcon("/Users/marcelaaliciaarroyo/Desktop/JAVA/Curso Java ULP/NetBeansProjects/ClinicaVeterinaria/Imagenes/green_pets_icon-icons.com_59415 (1).png")); // NOI18N
+        jlBienvenida.setText("    PET DOCTOR");
+        jlBienvenida.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jlBienvenida, javax.swing.GroupLayout.PREFERRED_SIZE, 592, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(jpLogging, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jlBienvenida, javax.swing.GroupLayout.DEFAULT_SIZE, 493, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -144,6 +154,23 @@ public class IngresoAlSistema extends javax.swing.JFrame {
     }//GEN-LAST:event_jBIngresarActionPerformed
 
     private void jLmostrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLmostrarMouseClicked
+//        //jTPassword.setEchoChar((char) 0);
+//
+//        if (passwordVisible) {
+//            // Si la contraseña está visible, ocúltala
+//            jTPassword.setEchoChar('*'); // O establece cualquier otro carácter que desees para ocultar la contraseña
+//        } else {
+//            // Si la contraseña está oculta, muéstrala
+//            jTPassword.setEchoChar((char) 0);
+//        }
+//
+//        // Invierte el estado
+//        passwordVisible = !passwordVisible;
+
+
+    }//GEN-LAST:event_jLmostrarMouseClicked
+
+    private void jLMostrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLMostrarMouseClicked
         //jTPassword.setEchoChar((char) 0);
 
         if (passwordVisible) {
@@ -156,9 +183,7 @@ public class IngresoAlSistema extends javax.swing.JFrame {
 
         // Invierte el estado
         passwordVisible = !passwordVisible;
-
-
-    }//GEN-LAST:event_jLmostrarMouseClicked
+    }//GEN-LAST:event_jLMostrarMouseClicked
 
     /**
      * @param args the command line arguments
@@ -201,6 +226,54 @@ public class IngresoAlSistema extends javax.swing.JFrame {
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -213,6 +286,7 @@ public class IngresoAlSistema extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBIngresar;
+    private javax.swing.JLabel jLMostrar;
     private javax.swing.JLabel jLmostrar;
     private javax.swing.JPasswordField jTPassword;
     private javax.swing.JTextField jTUsuario;
@@ -235,7 +309,7 @@ public class IngresoAlSistema extends javax.swing.JFrame {
             jpLogging.repaint();
             Menu menu = new Menu();
 
-            //menu.add(menu);
+            
             menu.setVisible(true);
             menu.setVisible(true);
             menu.setLocationRelativeTo(null);
