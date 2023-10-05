@@ -478,11 +478,11 @@ public class FormularioCliente extends javax.swing.JInternalFrame {
         int documento;
         try {
             try {
+                
                 documento = Integer.parseInt(jTDocumento.getText());
 
                 cliente = clienteD.buscarListaClientexDni(documento);
 
-                // if (cliente != null && botonAnterior == jBNuevo) {
                 if (cliente != null && estado.equals(Estado.NUEVO)) {
 
                     JOptionPane.showMessageDialog(this, "El Documento ya existe, no puede darlo de Alta.");

@@ -165,7 +165,19 @@ public class ClienteDAO extends DAO {
 
         return cliente;
     }
+    public Collection<Cliente> listarCliente() throws Exception {
+        String sql = "SELECT * FROM `clientes`";
+        try (PreparedStatement preparedStatement = conexion.prepareStatement(sql)) {
+            resultado = consultarBase(preparedStatement);
+            Collection<Cliente> clientes = new ArrayList<>();
+            while (resultado.next()) {
+                clientes.add(obtenerClienteDesdeResultado(resultado));
+            }
 
+            return clientes;
+
+        }
+    }
     private void validarCliente(Cliente cliente) throws Exception {
         if (cliente == null) {
             throw new Exception("Debe indicar un Cliente");

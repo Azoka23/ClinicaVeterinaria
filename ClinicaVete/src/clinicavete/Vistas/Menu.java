@@ -4,8 +4,12 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Menu extends javax.swing.JFrame {
+
+    DesktopPaneWithBackground jEscritorio;
 
     /**
      * Creates new form FormMenu
@@ -17,12 +21,21 @@ public class Menu extends javax.swing.JFrame {
 //        
 
         // Configura otras propiedades del JFrame
+        jEscritorio = new DesktopPaneWithBackground("/clinicavete/Imagenes/veterinary_icon_180438.png");
+        setContentPane(jEscritorio);
+
+        // Configura otras propiedades del JFrame
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         setResizable(true);
         pack(); // Ajusta el tamaño inicial según el contenido
         setVisible(true);
 
+//        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//        setLocationRelativeTo(null);
+//        setResizable(true);
+//        pack(); // Ajusta el tamaño inicial según el contenido
+//        setVisible(true);
     }
 
     public static void main(String args[]) {
@@ -39,7 +52,6 @@ public class Menu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jEscritorio = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
         jBarClientes = new javax.swing.JMenu();
         jMIBuscar = new javax.swing.JMenuItem();
@@ -59,12 +71,10 @@ public class Menu extends javax.swing.JFrame {
         setTitle("PET DOCTOR");
         setPreferredSize(new java.awt.Dimension(800, 700));
 
-        jEscritorio.setPreferredSize(new java.awt.Dimension(700, 600));
-
         jBarClientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/clinicavete/Imagenes/people_114360.png"))); // NOI18N
         jBarClientes.setText("Clientes");
 
-        jMIBuscar.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.SHIFT_MASK));
+        jMIBuscar.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.SHIFT_DOWN_MASK));
         jMIBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/clinicavete/Imagenes/free-30-instagram-stories-icons21_122568.png"))); // NOI18N
         jMIBuscar.setText("Buscar");
         jMIBuscar.addActionListener(new java.awt.event.ActionListener() {
@@ -74,7 +84,7 @@ public class Menu extends javax.swing.JFrame {
         });
         jBarClientes.add(jMIBuscar);
 
-        jMINuevo.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_B, java.awt.event.InputEvent.SHIFT_MASK));
+        jMINuevo.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_B, java.awt.event.InputEvent.SHIFT_DOWN_MASK));
         jMINuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/clinicavete/Imagenes/free-30-instagram-stories-icons51_122598.png"))); // NOI18N
         jMINuevo.setText("Nuevo");
         jMINuevo.addActionListener(new java.awt.event.ActionListener() {
@@ -89,12 +99,12 @@ public class Menu extends javax.swing.JFrame {
         jBarMascotas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/clinicavete/Imagenes/labrador_dog_animal_15967.png"))); // NOI18N
         jBarMascotas.setText("Mascotas");
 
-        jMIBuscarMascotas.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.CTRL_MASK));
+        jMIBuscarMascotas.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         jMIBuscarMascotas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/clinicavete/Imagenes/free-30-instagram-stories-icons23_122570.png"))); // NOI18N
         jMIBuscarMascotas.setText("Buscar");
         jBarMascotas.add(jMIBuscarMascotas);
 
-        jMINuevaMasc.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_B, java.awt.event.InputEvent.CTRL_MASK));
+        jMINuevaMasc.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_B, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         jMINuevaMasc.setIcon(new javax.swing.ImageIcon(getClass().getResource("/clinicavete/Imagenes/free-30-instagram-stories-icons53_122600.png"))); // NOI18N
         jMINuevaMasc.setText("Nueva");
         jMINuevaMasc.addActionListener(new java.awt.event.ActionListener() {
@@ -109,12 +119,12 @@ public class Menu extends javax.swing.JFrame {
         jMbarAdm.setIcon(new javax.swing.ImageIcon(getClass().getResource("/clinicavete/Imagenes/pet_folder_file_document_page_icon_124627.png"))); // NOI18N
         jMbarAdm.setText("Administracion");
 
-        jMIVisitas.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.CTRL_MASK));
+        jMIVisitas.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         jMIVisitas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/clinicavete/Imagenes/checklist_medical_healthcare_pen_clipboard_clipchart_icon_142002.png"))); // NOI18N
         jMIVisitas.setText("Visitas");
         jMbarAdm.add(jMIVisitas);
 
-        jMITratam.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.CTRL_MASK));
+        jMITratam.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         jMITratam.setIcon(new javax.swing.ImageIcon(getClass().getResource("/clinicavete/Imagenes/medical-12_icon-icons.com_73944.png"))); // NOI18N
         jMITratam.setText("Tratamiento");
         jMITratam.addActionListener(new java.awt.event.ActionListener() {
@@ -124,7 +134,7 @@ public class Menu extends javax.swing.JFrame {
         });
         jMbarAdm.add(jMITratam);
 
-        jMIOtros.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.CTRL_MASK));
+        jMIOtros.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         jMIOtros.setIcon(new javax.swing.ImageIcon(getClass().getResource("/clinicavete/Imagenes/household_chores_feeding_pet_feed_dog_food_icon_133347.png"))); // NOI18N
         jMIOtros.setText("Otros");
         jMIOtros.addActionListener(new java.awt.event.ActionListener() {
@@ -139,14 +149,13 @@ public class Menu extends javax.swing.JFrame {
         jMBarFacturacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/clinicavete/Imagenes/budget256_24775.png"))); // NOI18N
         jMBarFacturacion.setText("Facturacion");
 
-        jMICosto.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.CTRL_MASK));
+        jMICosto.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         jMICosto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/clinicavete/Imagenes/pet_rat_mouse_11098.png"))); // NOI18N
         jMICosto.setText("Costo visita");
         jMBarFacturacion.add(jMICosto);
 
         jMenuBar1.add(jMBarFacturacion);
 
-        jMBarSalir.setIcon(new javax.swing.ImageIcon("/Users/marcelaaliciaarroyo/Desktop/JAVA/Curso Java ULP/NetBeansProjects/ClinicaVeterinaria/Imagenes/477A86B10B034C3087ADC368774218B1.png")); // NOI18N
         jMBarSalir.setText("Salir");
         jMenuBar1.add(jMBarSalir);
 
@@ -156,11 +165,11 @@ public class Menu extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jEscritorio, javax.swing.GroupLayout.DEFAULT_SIZE, 599, Short.MAX_VALUE)
+            .addGap(0, 599, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jEscritorio, javax.swing.GroupLayout.DEFAULT_SIZE, 505, Short.MAX_VALUE)
+            .addGap(0, 505, Short.MAX_VALUE)
         );
 
         pack();
@@ -171,7 +180,28 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_jMIBuscarActionPerformed
 
     private void jMINuevaMascActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMINuevaMascActionPerformed
-        // TODO add your handling code here:
+        try {
+            jEscritorio.removeAll();
+            jEscritorio.repaint();
+            //jEscritorio.add(jLULP);
+            FormularioMascotas cargarMascotas = new FormularioMascotas();
+
+            // Configurar el tamaño del JInternalFrame
+            cargarMascotas.setSize(600, 500);
+            cargarMascotas.pack();
+            // Calcular el centro del JDesktopPane
+            int x = (jEscritorio.getWidth() - cargarMascotas.getWidth()) / 2;
+            int y = (jEscritorio.getHeight() - cargarMascotas.getHeight()) / 2;
+
+            // Establecer la ubicación y agregar el JInternalFrame
+            cargarMascotas.setBounds(x, y, cargarMascotas.getWidth(), cargarMascotas.getHeight());
+            jEscritorio.add(cargarMascotas);
+            cargarMascotas.setVisible(true);
+
+            // TODO add your handling code here:
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jMINuevaMascActionPerformed
 
     private void jMITratamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMITratamActionPerformed
@@ -183,7 +213,7 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_jMIOtrosActionPerformed
 
     private void jMINuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMINuevoActionPerformed
-       jEscritorio.removeAll();
+        jEscritorio.removeAll();
         jEscritorio.repaint();
         //jEscritorio.add(jLULP);
         FormularioCliente cargarCliente = new FormularioCliente();
@@ -239,7 +269,6 @@ public class Menu extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu jBarClientes;
     private javax.swing.JMenu jBarMascotas;
-    private javax.swing.JDesktopPane jEscritorio;
     private javax.swing.JMenu jMBarFacturacion;
     private javax.swing.JMenu jMBarSalir;
     private javax.swing.JMenuItem jMIBuscar;

@@ -12,6 +12,7 @@ import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collection;
+import javax.swing.JOptionPane;
 
 public class MascotaDAO extends DAO {
 
@@ -50,7 +51,7 @@ public class MascotaDAO extends DAO {
     public void modificarMascota(Mascota mascota) throws Exception {
         // Utilidades.validar(mascota);
         validarMascota(mascota);
-        String sql = "UPDATE mascotas SET alias=?, sexo=?, especie=?, raza=?, colorDePelo=?, fechaNac=?, pesoM=?,idCliente=?, estado=? WHERE idMascota=?";
+        String sql = "UPDATE mascotas SET alias=?, sexo=?, especie=?, raza=?, colorDePelo=?, fechaNac=?, pesoM=?,pesoA=?,idCliente=?, estado=? WHERE idMascota=?";
 
         try (PreparedStatement preparedStatement = conexion.prepareStatement(sql)) {
 
@@ -65,7 +66,8 @@ public class MascotaDAO extends DAO {
             preparedStatement.setInt(9, mascota.getIdCliente().getIdCliente());
             preparedStatement.setBoolean(10, mascota.isEstado());
             preparedStatement.setInt(11, mascota.getIdMascota());
-
+            
+ //JOptionPane.showMessageDialog(null, preparedStatement);
             insertarModificarEliminar(preparedStatement);
         } catch (SQLException ex) {
             // Manejar la excepción si es necesario
@@ -119,37 +121,22 @@ public class MascotaDAO extends DAO {
             preparedStatement.setInt(1, idMascota);
 
             resultado = consultarBase(preparedStatement);
-
+//JOptionPane.showMessageDialog(null, resultado);
             Mascota mascota = null;
 
             if (resultado.next()) {
-
                 mascota = obtenerMascotaDesdeResultado(resultado);
-//                //Mascota mascota = new Mascota();
-//                // Crear una instancia de ClienteDAO
-//                ClienteDAO clienteDAO = new ClienteDAO();
-//                mascota.setIdMascota(resultado.getInt("idMascota"));
-//                mascota.setAlias(resultado.getString("alias"));
-//                mascota.setSexo(Sexo.valueOf(resultado.getString("sexo")));
-//                mascota.setEspecie(resultado.getString("especie"));
-//                mascota.setRaza(resultado.getString("raza"));
-//                mascota.setColorDePelo(resultado.getString("colorDePelo"));
-//                mascota.setFechaNacimiento(resultado.getDate("fechaNac").toLocalDate());
-//                mascota.setPesoMedia(resultado.getDouble("pesoM"));
-//                int idCliente = resultado.getInt("idCliente");
-//                Cliente cliente = clienteDAO.obtenerClientexId(idCliente);  // Llamar al método con el paréntesis de cierre
-//                mascota.setIdCliente(cliente);
             }
             return mascota;
 
         }
     }
 
-    public Mascota obtenerMascotaPorId(int idMateria) throws Exception {
+    public Mascota obtenerMascotaPorId(int idMascota) throws Exception {
         String sql = "SELECT * FROM `mascotas` WHERE idMascota=?";
 
         try (PreparedStatement preparedStatement = conexion.prepareStatement(sql)) {
-            preparedStatement.setInt(1, idMateria);
+            preparedStatement.setInt(1, idMascota);
             resultado = consultarBase(preparedStatement);
 
             Mascota mascota = null;
@@ -206,7 +193,7 @@ public class MascotaDAO extends DAO {
 
         Mascota mascota = new Mascota();
 
-        mascota.setIdMascota(result.getInt("id_mascota"));
+        mascota.setIdMascota(result.getInt("idMascota"));
 
         mascota.setAlias(result.getString("alias"));
         mascota.setSexo(Sexo.valueOf(result.getString("sexo")));
@@ -217,6 +204,7 @@ public class MascotaDAO extends DAO {
         mascota.setPesoMedia(result.getDouble("pesoM"));
         mascota.setPesoActual(result.getDouble("pesoA"));
         mascota.setIdCliente(clienteDAO.obtenerClientexId(result.getInt("idCliente")));
+        mascota.setEstado(result.getBoolean("estado"));
 
         return mascota;
     }
